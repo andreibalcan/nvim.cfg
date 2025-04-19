@@ -1,59 +1,52 @@
 return {
-  -- Lazy manages itself
-  { "folke/lazy.nvim", version = "*" },
+	{ "folke/lazy.nvim", version = "*" },
 
-  -- Themes
-  { "EdenEast/nightfox.nvim" },
+	{ "nvim-tree/nvim-web-devicons", lazy = true },
 
-  -- Telescope
-  {
-    "nvim-telescope/telescope.nvim",
-    tag = "0.1.8",
-    dependencies = { "nvim-lua/plenary.nvim" }
-  },
+	{ "EdenEast/nightfox.nvim" },
 
-  -- Treesitter
-  {
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate"
-  },
-  { "nvim-treesitter/playground" },
+	{
+		"nvim-telescope/telescope.nvim",
+		tag = "0.1.8",
+		dependencies = { "nvim-lua/plenary.nvim" },
+	},
 
-  -- Git
-  { "mbbill/undotree" },
-  { "tpope/vim-fugitive" },
-  { "lewis6991/gitsigns.nvim" },
+	{
+		"nvim-treesitter/nvim-treesitter",
+		build = ":TSUpdate",
+	},
 
-  -- LSP Zero
-  {
-    "VonHeikemen/lsp-zero.nvim",
-    branch = "v3.x",
-    dependencies = {
-      -- LSP Support
-      "neovim/nvim-lspconfig",
-      "williamboman/mason.nvim",
-      "williamboman/mason-lspconfig.nvim",
+	{ "nvim-treesitter/playground" },
 
-      -- Autocompletion
-      "hrsh7th/nvim-cmp",
-      "hrsh7th/cmp-nvim-lsp",
-      "L3MON4D3/LuaSnip",
-      "saadparwaiz1/cmp_luasnip",
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
-    }
-  },
+	{ "mbbill/undotree" },
+	{ "tpope/vim-fugitive" },
+	{ "lewis6991/gitsigns.nvim" },
 
-  -- UI
-  { "nvim-tree/nvim-web-devicons" },
-  {
-    "nvim-lualine/lualine.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" }
-  },
+	{
+		"VonHeikemen/lsp-zero.nvim",
+		branch = "v3.x",
+		dependencies = {
+			-- LSP Support
+			"neovim/nvim-lspconfig",
+			"williamboman/mason.nvim",
+			"williamboman/mason-lspconfig.nvim",
 
-  -- Formatting
-  { "nvimtools/none-ls.nvim" },
+			-- Autocompletion
+			"hrsh7th/nvim-cmp",
+			"hrsh7th/cmp-nvim-lsp",
+			"L3MON4D3/LuaSnip",
+			"saadparwaiz1/cmp_luasnip",
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-path",
+		},
+	},
 
-  -- Learn
-  { "ThePrimeagen/vim-be-good" },
+	{
+		"nvim-lualine/lualine.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+	},
+
+	{ "nvimtools/none-ls.nvim" },
+
+	{ "ThePrimeagen/vim-be-good" },
 }

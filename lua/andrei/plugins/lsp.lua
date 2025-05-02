@@ -44,6 +44,7 @@ return {
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"omnisharp",
+                    "angularls",
 				},
 			})
 
@@ -53,6 +54,12 @@ return {
 				on_attach = on_attach,
 				enable_import_completion = true,
 				organize_imports_on_format = true,
+			})
+
+			lspconfig.angularls.setup({
+				root_dir = lspconfig.util.root_pattern("angular.json", "project.json", "tsconfig.json"),
+				capabilities = capabilities,
+				on_attach = on_attach,
 			})
 
 			local cmp = require("cmp")

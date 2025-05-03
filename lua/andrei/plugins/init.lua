@@ -3,7 +3,7 @@ return {
 
 	{ "nvim-tree/nvim-web-devicons", lazy = true },
 
-	{ "EdenEast/nightfox.nvim" },
+	{ "Mofiqul/vscode.nvim" },
 
 	{
 		"nvim-telescope/telescope.nvim",

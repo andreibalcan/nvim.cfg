@@ -10,5 +10,6 @@ return {
 		vim.keymap.set("n", "<leader>ps", function()
 			builtin.grep_string({ search = vim.fn.input("Grep > ") })
 		end, { desc = "Grep string" })
+		vim.keymap.set("n", "<leader>f", builtin.current_buffer_fuzzy_find, { desc = "Search in current file" })
 	end,
 }

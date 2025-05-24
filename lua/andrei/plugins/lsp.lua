@@ -30,22 +30,16 @@ return {
 				vim.keymap.set("n", "<leader>vrr", vim.lsp.buf.references, opts)
 				vim.keymap.set("n", "<leader>vrn", vim.lsp.buf.rename, opts)
 				vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
-                vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {})
+				vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {})
 			end
 
 			lsp_zero.on_attach(on_attach)
 
-			lspconfig.angularls.setup({
-				root_dir = lspconfig.util.root_pattern("angular.json", "project.json", "tsconfig.json"),
-				capabilities = capabilities,
-				on_attach = on_attach,
-			})
-
-            require("mason").setup()
+			require("mason").setup()
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"omnisharp",
-                    "angularls",
+					"ts_ls",
 				},
 			})
 
@@ -57,10 +51,8 @@ return {
 				organize_imports_on_format = true,
 			})
 
-			lspconfig.angularls.setup({
-				root_dir = lspconfig.util.root_pattern("angular.json", "project.json", "tsconfig.json"),
-				capabilities = capabilities,
-				on_attach = on_attach,
+			lspconfig.ts_ls.setup({
+				filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
 			})
 
 			local cmp = require("cmp")
